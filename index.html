@@ -1,22 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For Joann ❤️</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<title>For Joann ❤️</title>
+<style>
+body {
+  background: linear-gradient(135deg, #ffd6e8, #ffe6f0);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 330px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+button {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#yes {
+  background: #ff4d88;
+  color: white;
+}
+
+#no {
+  background: #ddd;
+  margin-left: 20px;
+  position: absolute;
+}
+
+.dance {
+  font-size: 70px;
+  animation: dance 0.6s infinite alternate;
+  display: inline-block;
+}
+
+@keyframes dance {
+  from { transform: rotate(-10deg) translateY(0); }
+  to { transform: rotate(10deg) translateY(-10px); }
+}
+</style>
 </head>
+
 <body>
-  <div class="container">
-    <h1>❤️</h1>
-    <h2>Our first meet</h2>
-    <p>I figured our first meet deserved a little moment of its own and some things feel better when they're asked in a special way.</p>
-    <p>Would you like to spend Valentine's weekend with me?</p>
-    <div class="buttons">
-      <button id="yesBtn">Yes</button>
-      <button id="noBtn">No</button>
+
+<div class="card" id="card">
+  <h2>🐼❤️🐼</h2>
+  <h3>Joann, will you be my Valentine? 💘</h3>
+  <p>I was wondering if you'd like to be my Valentine this year 😏</p>
+
+  <button id="yes" onclick="yesClick()">Yes</button>
+  <button id="no" onclick="moveNo()">No</button>
+
+  <p style="font-size:12px;color:gray;">No is feeling shy today 😌</p>
+</div>
+
+<script>
+function moveNo(){
+  const b = document.getElementById("no");
+  b.style.left = Math.random() * 200 + "px";
+  b.style.top = Math.random() * 200 + "px";
+}
+
+function yesClick(){
+  document.body.innerHTML = `
+  <div style="text-align:center;">
+    <h1 style="color:#ff4d88;">SHE SAID YES 😍🎉</h1>
+    <div>
+      <span class="dance">🐼</span>
+      <span class="dance">🐼</span>
     </div>
-  </div>
-  <script src="script.js"></script>
+    <p style="margin-top:15px;">Happy Valentine’s Day, Joann 💖</p>
+    <p style="font-size:18px;"><b>You later, alligator 🐊😉</b></p>
+  </div>`;
+}
+</script>
+
 </body>
 </html>
