@@ -1,4 +1,4 @@
-/* Basic layout */
+/* Full page layout */
 body, html {
   margin: 0;
   padding: 0;
@@ -9,13 +9,13 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .container {
   text-align: center;
   max-width: 600px;
   padding: 20px;
-  position: relative;
 }
 
 h1 { font-size: 3rem; margin-bottom: 10px; }
@@ -23,9 +23,10 @@ h2 { font-size: 2rem; margin-bottom: 20px; }
 p { font-size: 1.2rem; margin-bottom: 20px; }
 
 /* Buttons layout */
-.button-container {
-  position: relative;
-  height: 100px; /* space for moving buttons */
+.buttons {
+  position: relative; 
+  height: 120px; 
+  margin-top: 20px;
 }
 
 button {
@@ -36,16 +37,18 @@ button {
   color: white;
   background: #ff4d4d;
   cursor: pointer;
-  position: absolute; /* allows movement for No */
   transition: all 0.2s ease;
 }
 
+/* Yes button stays below text */
 #yesBtn {
-  left: 40%;
-  top: 0;
+  position: relative;
+  margin-right: 20px;
 }
 
+/* No button moves freely */
 #noBtn {
+  position: absolute;
   left: 60%;
   top: 0;
 }
