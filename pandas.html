@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Celebrate 🐼🐼</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .pandas {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 30px;
+      position: relative;
+    }
+
+    .panda {
+      width: 150px;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Yay! 🎉</h1>
+    <p>Here are your dancing pandas 🐼🐼</p>
+    <div class="pandas">
+      <img src="panda1.png" class="panda" />
+      <img src="panda2.png" class="panda" />
+    </div>
+  </div>
+  <script>
+    // Simple dancing animation
+    const pandas = document.querySelectorAll(".panda");
+    pandas.forEach(p => {
+      let direction = 1;
+      setInterval(() => {
+        p.style.top = (parseInt(p.style.top || 0) + 5 * direction) + "px";
+        if(parseInt(p.style.top) > 20 || parseInt(p.style.top) < -20) direction *= -1;
+      }, 200);
+    });
+  </script>
+</body>
+</html>
